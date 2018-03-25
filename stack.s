@@ -25,7 +25,7 @@ _MemMgr_COLLECTOR:
 _MemMgr_TEST:
 	.word	0
 	.word	-1
-str_const35:
+str_const32:
 	.word	5
 	.word	5
 	.word	String_dispTab
@@ -34,7 +34,7 @@ str_const35:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const34:
+str_const31:
 	.word	5
 	.word	5
 	.word	String_dispTab
@@ -43,7 +43,7 @@ str_const34:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const33:
+str_const30:
 	.word	5
 	.word	6
 	.word	String_dispTab
@@ -52,7 +52,7 @@ str_const33:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const32:
+str_const29:
 	.word	5
 	.word	6
 	.word	String_dispTab
@@ -61,7 +61,7 @@ str_const32:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const31:
+str_const28:
 	.word	5
 	.word	6
 	.word	String_dispTab
@@ -70,7 +70,7 @@ str_const31:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const30:
+str_const27:
 	.word	5
 	.word	6
 	.word	String_dispTab
@@ -79,7 +79,7 @@ str_const30:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const29:
+str_const26:
 	.word	5
 	.word	5
 	.word	String_dispTab
@@ -88,7 +88,7 @@ str_const29:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const28:
+str_const25:
 	.word	5
 	.word	6
 	.word	String_dispTab
@@ -97,7 +97,7 @@ str_const28:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const27:
+str_const24:
 	.word	5
 	.word	5
 	.word	String_dispTab
@@ -106,7 +106,7 @@ str_const27:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const26:
+str_const23:
 	.word	5
 	.word	6
 	.word	String_dispTab
@@ -115,7 +115,7 @@ str_const26:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const25:
+str_const22:
 	.word	5
 	.word	8
 	.word	String_dispTab
@@ -124,7 +124,7 @@ str_const25:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const24:
+str_const21:
 	.word	5
 	.word	6
 	.word	String_dispTab
@@ -133,7 +133,7 @@ str_const24:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const23:
+str_const20:
 	.word	5
 	.word	5
 	.word	String_dispTab
@@ -142,15 +142,7 @@ str_const23:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const22:
-	.word	5
-	.word	5
-	.word	String_dispTab
-	.word	int_const0
-	.byte	0	
-	.align	2
-	.word	-1
-str_const21:
+str_const19:
 	.word	5
 	.word	5
 	.word	String_dispTab
@@ -159,7 +151,7 @@ str_const21:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const20:
+str_const18:
 	.word	5
 	.word	5
 	.word	String_dispTab
@@ -168,7 +160,7 @@ str_const20:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const19:
+str_const17:
 	.word	5
 	.word	5
 	.word	String_dispTab
@@ -177,7 +169,7 @@ str_const19:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const18:
+str_const16:
 	.word	5
 	.word	5
 	.word	String_dispTab
@@ -186,7 +178,7 @@ str_const18:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const17:
+str_const15:
 	.word	5
 	.word	5
 	.word	String_dispTab
@@ -195,7 +187,7 @@ str_const17:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const16:
+str_const14:
 	.word	5
 	.word	5
 	.word	String_dispTab
@@ -204,7 +196,7 @@ str_const16:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const15:
+str_const13:
 	.word	5
 	.word	5
 	.word	String_dispTab
@@ -213,7 +205,7 @@ str_const15:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const14:
+str_const12:
 	.word	5
 	.word	5
 	.word	String_dispTab
@@ -222,7 +214,7 @@ str_const14:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const13:
+str_const11:
 	.word	5
 	.word	5
 	.word	String_dispTab
@@ -231,7 +223,7 @@ str_const13:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const12:
+str_const10:
 	.word	5
 	.word	5
 	.word	String_dispTab
@@ -240,16 +232,7 @@ str_const12:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const11:
-	.word	5
-	.word	6
-	.word	String_dispTab
-	.word	int_const4
-	.ascii	"push"
-	.byte	0	
-	.align	2
-	.word	-1
-str_const10:
+str_const9:
 	.word	5
 	.word	5
 	.word	String_dispTab
@@ -258,7 +241,7 @@ str_const10:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const9:
+str_const8:
 	.word	5
 	.word	5
 	.word	String_dispTab
@@ -267,7 +250,7 @@ str_const9:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const8:
+str_const7:
 	.word	5
 	.word	5
 	.word	String_dispTab
@@ -276,7 +259,7 @@ str_const8:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const7:
+str_const6:
 	.word	5
 	.word	5
 	.word	String_dispTab
@@ -285,7 +268,7 @@ str_const7:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const6:
+str_const5:
 	.word	5
 	.word	5
 	.word	String_dispTab
@@ -294,7 +277,7 @@ str_const6:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const5:
+str_const4:
 	.word	5
 	.word	5
 	.word	String_dispTab
@@ -303,7 +286,7 @@ str_const5:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const4:
+str_const3:
 	.word	5
 	.word	5
 	.word	String_dispTab
@@ -312,21 +295,11 @@ str_const4:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const3:
-	.word	5
-	.word	9
-	.word	String_dispTab
-	.word	int_const12
-	.ascii	"Stack is empty!\n"
-	.byte	0	
-	.align	2
-	.word	-1
 str_const2:
 	.word	5
 	.word	5
 	.word	String_dispTab
-	.word	int_const1
-	.ascii	"@"
+	.word	int_const0
 	.byte	0	
 	.align	2
 	.word	-1
@@ -347,12 +320,6 @@ str_const0:
 	.ascii	"%"
 	.byte	0	
 	.align	2
-	.word	-1
-int_const12:
-	.word	3
-	.word	4
-	.word	Int_dispTab
-	.word	16
 	.word	-1
 int_const11:
 	.word	3
@@ -438,6 +405,9 @@ bool_const1:
 	.word	Bool_dispTab
 	.word	1
 class_nameTab:
+	.word	str_const23
+	.word	str_const24
+	.word	str_const25
 	.word	str_const26
 	.word	str_const27
 	.word	str_const28
@@ -445,9 +415,6 @@ class_nameTab:
 	.word	str_const30
 	.word	str_const31
 	.word	str_const32
-	.word	str_const33
-	.word	str_const34
-	.word	str_const35
 class_objTab:
 	.word	Object_protObj
 	.word	Object_init
@@ -563,14 +530,14 @@ Pop_protObj:
 	.word	8
 	.word	5
 	.word	Pop_dispTab
-	.word	str_const22
+	.word	str_const2
 	.word	0
 	.word	-1
 Push_protObj:
 	.word	7
 	.word	5
 	.word	Push_dispTab
-	.word	str_const22
+	.word	str_const2
 	.word	0
 	.word	-1
 String_protObj:
@@ -603,10 +570,10 @@ Main_protObj:
 	.word	Main_dispTab
 	.word	bool_const0
 	.word	0
-	.word	str_const22
-	.word	str_const22
-	.word	str_const22
-	.word	str_const22
+	.word	str_const2
+	.word	str_const2
+	.word	str_const2
+	.word	str_const2
 	.word	int_const0
 	.word	int_const0
 	.word	int_const0
@@ -769,7 +736,7 @@ A2I.c2i:
 	move	$s0 $a0
 	sw	$s1 0($fp)
 	lw	$s1 16($fp)
-	la	$t2 str_const12
+	la	$t2 str_const10
 	move	$t1 $s1
 	la	$a0 bool_const1
 	beq	$t1 $t2 label2
@@ -782,7 +749,7 @@ label2:
 	b	label1
 label0:
 	lw	$s1 16($fp)
-	la	$t2 str_const13
+	la	$t2 str_const11
 	move	$t1 $s1
 	la	$a0 bool_const1
 	beq	$t1 $t2 label5
@@ -795,7 +762,7 @@ label5:
 	b	label4
 label3:
 	lw	$s1 16($fp)
-	la	$t2 str_const14
+	la	$t2 str_const12
 	move	$t1 $s1
 	la	$a0 bool_const1
 	beq	$t1 $t2 label8
@@ -808,7 +775,7 @@ label8:
 	b	label7
 label6:
 	lw	$s1 16($fp)
-	la	$t2 str_const15
+	la	$t2 str_const13
 	move	$t1 $s1
 	la	$a0 bool_const1
 	beq	$t1 $t2 label11
@@ -821,7 +788,7 @@ label11:
 	b	label10
 label9:
 	lw	$s1 16($fp)
-	la	$t2 str_const16
+	la	$t2 str_const14
 	move	$t1 $s1
 	la	$a0 bool_const1
 	beq	$t1 $t2 label14
@@ -834,7 +801,7 @@ label14:
 	b	label13
 label12:
 	lw	$s1 16($fp)
-	la	$t2 str_const17
+	la	$t2 str_const15
 	move	$t1 $s1
 	la	$a0 bool_const1
 	beq	$t1 $t2 label17
@@ -847,7 +814,7 @@ label17:
 	b	label16
 label15:
 	lw	$s1 16($fp)
-	la	$t2 str_const18
+	la	$t2 str_const16
 	move	$t1 $s1
 	la	$a0 bool_const1
 	beq	$t1 $t2 label20
@@ -860,7 +827,7 @@ label20:
 	b	label19
 label18:
 	lw	$s1 16($fp)
-	la	$t2 str_const19
+	la	$t2 str_const17
 	move	$t1 $s1
 	la	$a0 bool_const1
 	beq	$t1 $t2 label23
@@ -873,7 +840,7 @@ label23:
 	b	label22
 label21:
 	lw	$s1 16($fp)
-	la	$t2 str_const20
+	la	$t2 str_const18
 	move	$t1 $s1
 	la	$a0 bool_const1
 	beq	$t1 $t2 label26
@@ -886,7 +853,7 @@ label26:
 	b	label25
 label24:
 	lw	$s1 16($fp)
-	la	$t2 str_const21
+	la	$t2 str_const19
 	move	$t1 $s1
 	la	$a0 bool_const1
 	beq	$t1 $t2 label29
@@ -900,7 +867,7 @@ label29:
 label27:
 	move	$a0 $s0
 	bne	$a0 $zero label30
-	la	$a0 str_const24
+	la	$a0 str_const21
 	li	$t1 26
 	jal	_dispatch_abort
 label30:
@@ -942,7 +909,7 @@ A2I.i2c:
 label33:
 	lw	$t1 12($a0)
 	beqz	$t1 label31
-	la	$a0 str_const12
+	la	$a0 str_const10
 	b	label32
 label31:
 	lw	$s1 16($fp)
@@ -955,7 +922,7 @@ label31:
 label36:
 	lw	$t1 12($a0)
 	beqz	$t1 label34
-	la	$a0 str_const13
+	la	$a0 str_const11
 	b	label35
 label34:
 	lw	$s1 16($fp)
@@ -968,7 +935,7 @@ label34:
 label39:
 	lw	$t1 12($a0)
 	beqz	$t1 label37
-	la	$a0 str_const14
+	la	$a0 str_const12
 	b	label38
 label37:
 	lw	$s1 16($fp)
@@ -981,7 +948,7 @@ label37:
 label42:
 	lw	$t1 12($a0)
 	beqz	$t1 label40
-	la	$a0 str_const15
+	la	$a0 str_const13
 	b	label41
 label40:
 	lw	$s1 16($fp)
@@ -994,7 +961,7 @@ label40:
 label45:
 	lw	$t1 12($a0)
 	beqz	$t1 label43
-	la	$a0 str_const16
+	la	$a0 str_const14
 	b	label44
 label43:
 	lw	$s1 16($fp)
@@ -1007,7 +974,7 @@ label43:
 label48:
 	lw	$t1 12($a0)
 	beqz	$t1 label46
-	la	$a0 str_const17
+	la	$a0 str_const15
 	b	label47
 label46:
 	lw	$s1 16($fp)
@@ -1020,7 +987,7 @@ label46:
 label51:
 	lw	$t1 12($a0)
 	beqz	$t1 label49
-	la	$a0 str_const18
+	la	$a0 str_const16
 	b	label50
 label49:
 	lw	$s1 16($fp)
@@ -1033,7 +1000,7 @@ label49:
 label54:
 	lw	$t1 12($a0)
 	beqz	$t1 label52
-	la	$a0 str_const19
+	la	$a0 str_const17
 	b	label53
 label52:
 	lw	$s1 16($fp)
@@ -1046,7 +1013,7 @@ label52:
 label57:
 	lw	$t1 12($a0)
 	beqz	$t1 label55
-	la	$a0 str_const20
+	la	$a0 str_const18
 	b	label56
 label55:
 	lw	$s1 16($fp)
@@ -1059,19 +1026,19 @@ label55:
 label60:
 	lw	$t1 12($a0)
 	beqz	$t1 label58
-	la	$a0 str_const21
+	la	$a0 str_const19
 	b	label59
 label58:
 	move	$a0 $s0
 	bne	$a0 $zero label61
-	la	$a0 str_const24
+	la	$a0 str_const21
 	li	$t1 44
 	jal	_dispatch_abort
 label61:
 	lw	$t1 8($a0)
 	lw	$t1 0($t1)
 	jalr		$t1
-	la	$a0 str_const22
+	la	$a0 str_const2
 label59:
 label56:
 label53:
@@ -1098,7 +1065,7 @@ A2I.a2i:
 	sw	$s1 0($fp)
 	lw	$a0 16($fp)
 	bne	$a0 $zero label65
-	la	$a0 str_const24
+	la	$a0 str_const21
 	li	$t1 57
 	jal	_dispatch_abort
 label65:
@@ -1126,7 +1093,7 @@ label62:
 	addiu	$sp $sp -4
 	lw	$a0 16($fp)
 	bne	$a0 $zero label69
-	la	$a0 str_const24
+	la	$a0 str_const21
 	li	$t1 58
 	jal	_dispatch_abort
 label69:
@@ -1134,7 +1101,7 @@ label69:
 	lw	$t1 20($t1)
 	jalr		$t1
 	move	$s1 $a0
-	la	$t2 str_const23
+	la	$t2 str_const20
 	move	$t1 $s1
 	la	$a0 bool_const1
 	beq	$t1 $t2 label68
@@ -1148,7 +1115,7 @@ label68:
 	addiu	$sp $sp -4
 	lw	$a0 16($fp)
 	bne	$a0 $zero label70
-	la	$a0 str_const24
+	la	$a0 str_const21
 	li	$t1 58
 	jal	_dispatch_abort
 label70:
@@ -1166,7 +1133,7 @@ label70:
 	addiu	$sp $sp -4
 	lw	$a0 16($fp)
 	bne	$a0 $zero label71
-	la	$a0 str_const24
+	la	$a0 str_const21
 	li	$t1 58
 	jal	_dispatch_abort
 label71:
@@ -1177,7 +1144,7 @@ label71:
 	addiu	$sp $sp -4
 	move	$a0 $s0
 	bne	$a0 $zero label72
-	la	$a0 str_const24
+	la	$a0 str_const21
 	li	$t1 58
 	jal	_dispatch_abort
 label72:
@@ -1198,7 +1165,7 @@ label66:
 	addiu	$sp $sp -4
 	lw	$a0 16($fp)
 	bne	$a0 $zero label76
-	la	$a0 str_const24
+	la	$a0 str_const21
 	li	$t1 59
 	jal	_dispatch_abort
 label76:
@@ -1206,7 +1173,7 @@ label76:
 	lw	$t1 20($t1)
 	jalr		$t1
 	move	$s1 $a0
-	la	$t2 str_const6
+	la	$t2 str_const5
 	move	$t1 $s1
 	la	$a0 bool_const1
 	beq	$t1 $t2 label75
@@ -1220,7 +1187,7 @@ label75:
 	addiu	$sp $sp -4
 	lw	$a0 16($fp)
 	bne	$a0 $zero label77
-	la	$a0 str_const24
+	la	$a0 str_const21
 	li	$t1 59
 	jal	_dispatch_abort
 label77:
@@ -1238,7 +1205,7 @@ label77:
 	addiu	$sp $sp -4
 	lw	$a0 16($fp)
 	bne	$a0 $zero label78
-	la	$a0 str_const24
+	la	$a0 str_const21
 	li	$t1 59
 	jal	_dispatch_abort
 label78:
@@ -1249,7 +1216,7 @@ label78:
 	addiu	$sp $sp -4
 	move	$a0 $s0
 	bne	$a0 $zero label79
-	la	$a0 str_const24
+	la	$a0 str_const21
 	li	$t1 59
 	jal	_dispatch_abort
 label79:
@@ -1263,7 +1230,7 @@ label73:
 	addiu	$sp $sp -4
 	move	$a0 $s0
 	bne	$a0 $zero label80
-	la	$a0 str_const24
+	la	$a0 str_const21
 	li	$t1 60
 	jal	_dispatch_abort
 label80:
@@ -1293,7 +1260,7 @@ A2I.a2i_aux:
 	la	$s4 int_const0
 	lw	$a0 28($fp)
 	bne	$a0 $zero label81
-	la	$a0 str_const24
+	la	$a0 str_const21
 	li	$t1 71
 	jal	_dispatch_abort
 label81:
@@ -1327,7 +1294,7 @@ label84:
 	addiu	$sp $sp -4
 	lw	$a0 28($fp)
 	bne	$a0 $zero label85
-	la	$a0 str_const24
+	la	$a0 str_const21
 	li	$t1 75
 	jal	_dispatch_abort
 label85:
@@ -1338,7 +1305,7 @@ label85:
 	addiu	$sp $sp -4
 	move	$a0 $s0
 	bne	$a0 $zero label86
-	la	$a0 str_const24
+	la	$a0 str_const21
 	li	$t1 75
 	jal	_dispatch_abort
 label86:
@@ -1390,7 +1357,7 @@ A2I.i2a:
 label89:
 	lw	$t1 12($a0)
 	beqz	$t1 label87
-	la	$a0 str_const12
+	la	$a0 str_const10
 	b	label88
 label87:
 	la	$s1 int_const0
@@ -1408,7 +1375,7 @@ label92:
 	addiu	$sp $sp -4
 	move	$a0 $s0
 	bne	$a0 $zero label93
-	la	$a0 str_const24
+	la	$a0 str_const21
 	li	$t1 92
 	jal	_dispatch_abort
 label93:
@@ -1432,7 +1399,7 @@ label90:
 	addiu	$sp $sp -4
 	move	$a0 $s0
 	bne	$a0 $zero label94
-	la	$a0 str_const24
+	la	$a0 str_const21
 	li	$t1 93
 	jal	_dispatch_abort
 label94:
@@ -1441,9 +1408,9 @@ label94:
 	jalr		$t1
 	sw	$a0 0($sp)
 	addiu	$sp $sp -4
-	la	$a0 str_const23
+	la	$a0 str_const20
 	bne	$a0 $zero label95
-	la	$a0 str_const24
+	la	$a0 str_const21
 	li	$t1 93
 	jal	_dispatch_abort
 label95:
@@ -1478,7 +1445,7 @@ A2I.i2a_aux:
 label98:
 	lw	$t1 12($a0)
 	beqz	$t1 label96
-	la	$a0 str_const22
+	la	$a0 str_const2
 	b	label97
 label96:
 	lw	$s3 24($fp)
@@ -1506,7 +1473,7 @@ label96:
 	addiu	$sp $sp -4
 	move	$a0 $s0
 	bne	$a0 $zero label99
-	la	$a0 str_const24
+	la	$a0 str_const21
 	li	$t1 103
 	jal	_dispatch_abort
 label99:
@@ -1519,7 +1486,7 @@ label99:
 	addiu	$sp $sp -4
 	move	$a0 $s0
 	bne	$a0 $zero label100
-	la	$a0 str_const24
+	la	$a0 str_const21
 	li	$t1 103
 	jal	_dispatch_abort
 label100:
@@ -1527,7 +1494,7 @@ label100:
 	lw	$t1 32($t1)
 	jalr		$t1
 	bne	$a0 $zero label101
-	la	$a0 str_const24
+	la	$a0 str_const21
 	li	$t1 103
 	jal	_dispatch_abort
 label101:
@@ -1763,7 +1730,7 @@ label111:
 	lw	$t1 12($t1)
 	jalr		$t1
 	move	$s1 $a0
-	la	$t2 str_const2
+	la	$t2 str_const0
 	move	$t1 $s1
 	la	$a0 bool_const1
 	beq	$t1 $t2 label110
@@ -1772,7 +1739,7 @@ label111:
 label110:
 	lw	$t1 12($a0)
 	beqz	$t1 label108
-	la	$a0 str_const3
+	la	$a0 str_const2
 	sw	$a0 0($sp)
 	addiu	$sp $sp -4
 	move	$a0 $s0
@@ -1786,7 +1753,7 @@ label112:
 	jalr		$t1
 	b	label109
 label108:
-	la	$a0 str_const4
+	la	$a0 str_const3
 	sw	$a0 0($sp)
 	addiu	$sp $sp -4
 	lw	$a0 16($fp)
@@ -1853,7 +1820,7 @@ Main.isOperation:
 	move	$s0 $a0
 	sw	$s1 0($fp)
 	lw	$s1 16($fp)
-	la	$t2 str_const5
+	la	$t2 str_const4
 	move	$t1 $s1
 	la	$a0 bool_const1
 	beq	$t1 $t2 label120
@@ -1866,7 +1833,7 @@ label120:
 	b	label119
 label118:
 	lw	$s1 16($fp)
-	la	$t2 str_const6
+	la	$t2 str_const5
 	move	$t1 $s1
 	la	$a0 bool_const1
 	beq	$t1 $t2 label123
@@ -1903,20 +1870,20 @@ Main.main:
 	jal	Stack_init
 	bne	$a0 $zero label124
 	la	$a0 str_const1
-	li	$t1 133
+	li	$t1 132
 	jal	_dispatch_abort
 label124:
 	lw	$t1 8($a0)
 	lw	$t1 20($t1)
 	jalr		$t1
 	sw	$a0 16($s0)
-	la	$a0 str_const7
+	la	$a0 str_const6
 	sw	$a0 0($sp)
 	addiu	$sp $sp -4
 	move	$a0 $s0
 	bne	$a0 $zero label125
 	la	$a0 str_const1
-	li	$t1 134
+	li	$t1 133
 	jal	_dispatch_abort
 label125:
 	lw	$t1 8($a0)
@@ -1925,7 +1892,7 @@ label125:
 	move	$a0 $s0
 	bne	$a0 $zero label126
 	la	$a0 str_const1
-	li	$t1 135
+	li	$t1 134
 	jal	_dispatch_abort
 label126:
 	lw	$t1 8($a0)
@@ -1942,7 +1909,7 @@ label129:
 	lw	$t1 12($a0)
 	beq	$t1 $zero label128
 	lw	$s1 20($s0)
-	la	$t2 str_const8
+	la	$t2 str_const7
 	move	$t1 $s1
 	la	$a0 bool_const1
 	beq	$t1 $t2 label132
@@ -1956,7 +1923,7 @@ label132:
 	b	label131
 label130:
 	lw	$s1 20($s0)
-	la	$t2 str_const9
+	la	$t2 str_const8
 	move	$t1 $s1
 	la	$a0 bool_const1
 	beq	$t1 $t2 label135
@@ -1968,7 +1935,7 @@ label135:
 	lw	$a0 16($s0)
 	bne	$a0 $zero label136
 	la	$a0 str_const1
-	li	$t1 141
+	li	$t1 140
 	jal	_dispatch_abort
 label136:
 	lw	$t1 8($a0)
@@ -1990,7 +1957,7 @@ label139:
 	lw	$t1 12($a0)
 	beqz	$t1 label137
 	lw	$s1 24($s0)
-	la	$t2 str_const5
+	la	$t2 str_const4
 	move	$t1 $s1
 	la	$a0 bool_const1
 	beq	$t1 $t2 label142
@@ -2002,7 +1969,7 @@ label142:
 	lw	$a0 16($s0)
 	bne	$a0 $zero label143
 	la	$a0 str_const1
-	li	$t1 145
+	li	$t1 146
 	jal	_dispatch_abort
 label143:
 	lw	$t1 8($a0)
@@ -2012,7 +1979,7 @@ label143:
 	lw	$a0 16($s0)
 	bne	$a0 $zero label144
 	la	$a0 str_const1
-	li	$t1 146
+	li	$t1 147
 	jal	_dispatch_abort
 label144:
 	lw	$t1 8($a0)
@@ -2022,7 +1989,7 @@ label144:
 	lw	$a0 16($s0)
 	bne	$a0 $zero label145
 	la	$a0 str_const1
-	li	$t1 147
+	li	$t1 148
 	jal	_dispatch_abort
 label145:
 	lw	$t1 8($a0)
@@ -2032,7 +1999,7 @@ label145:
 	lw	$a0 16($s0)
 	bne	$a0 $zero label146
 	la	$a0 str_const1
-	li	$t1 148
+	li	$t1 149
 	jal	_dispatch_abort
 label146:
 	lw	$t1 8($a0)
@@ -2042,7 +2009,7 @@ label146:
 	lw	$a0 16($s0)
 	bne	$a0 $zero label147
 	la	$a0 str_const1
-	li	$t1 149
+	li	$t1 150
 	jal	_dispatch_abort
 label147:
 	lw	$t1 8($a0)
@@ -2055,7 +2022,7 @@ label147:
 	lw	$a0 16($s0)
 	bne	$a0 $zero label148
 	la	$a0 str_const1
-	li	$t1 150
+	li	$t1 151
 	jal	_dispatch_abort
 label148:
 	lw	$t1 8($a0)
@@ -2068,7 +2035,7 @@ label148:
 	lw	$a0 16($s0)
 	bne	$a0 $zero label149
 	la	$a0 str_const1
-	li	$t1 151
+	li	$t1 152
 	jal	_dispatch_abort
 label149:
 	lw	$t1 8($a0)
@@ -2080,7 +2047,7 @@ label140:
 	lw	$a0 16($s0)
 	bne	$a0 $zero label150
 	la	$a0 str_const1
-	li	$t1 154
+	li	$t1 155
 	jal	_dispatch_abort
 label150:
 	lw	$t1 8($a0)
@@ -2090,7 +2057,7 @@ label150:
 	lw	$a0 16($s0)
 	bne	$a0 $zero label151
 	la	$a0 str_const1
-	li	$t1 155
+	li	$t1 156
 	jal	_dispatch_abort
 label151:
 	lw	$t1 8($a0)
@@ -2103,7 +2070,7 @@ label151:
 	jal	A2I_init
 	bne	$a0 $zero label152
 	la	$a0 str_const1
-	li	$t1 155
+	li	$t1 156
 	jal	_dispatch_abort
 label152:
 	lw	$t1 8($a0)
@@ -2113,7 +2080,7 @@ label152:
 	lw	$a0 16($s0)
 	bne	$a0 $zero label153
 	la	$a0 str_const1
-	li	$t1 156
+	li	$t1 157
 	jal	_dispatch_abort
 label153:
 	lw	$t1 8($a0)
@@ -2123,7 +2090,7 @@ label153:
 	lw	$a0 16($s0)
 	bne	$a0 $zero label154
 	la	$a0 str_const1
-	li	$t1 157
+	li	$t1 158
 	jal	_dispatch_abort
 label154:
 	lw	$t1 8($a0)
@@ -2136,7 +2103,7 @@ label154:
 	jal	A2I_init
 	bne	$a0 $zero label155
 	la	$a0 str_const1
-	li	$t1 157
+	li	$t1 158
 	jal	_dispatch_abort
 label155:
 	lw	$t1 8($a0)
@@ -2146,7 +2113,7 @@ label155:
 	lw	$a0 16($s0)
 	bne	$a0 $zero label156
 	la	$a0 str_const1
-	li	$t1 158
+	li	$t1 159
 	jal	_dispatch_abort
 label156:
 	lw	$t1 8($a0)
@@ -2169,7 +2136,7 @@ label156:
 	jal	A2I_init
 	bne	$a0 $zero label157
 	la	$a0 str_const1
-	li	$t1 161
+	li	$t1 162
 	jal	_dispatch_abort
 label157:
 	lw	$t1 8($a0)
@@ -2180,7 +2147,7 @@ label157:
 	lw	$a0 16($s0)
 	bne	$a0 $zero label158
 	la	$a0 str_const1
-	li	$t1 161
+	li	$t1 162
 	jal	_dispatch_abort
 label158:
 	lw	$t1 8($a0)
@@ -2193,7 +2160,7 @@ label137:
 	lw	$a0 16($s0)
 	bne	$a0 $zero label159
 	la	$a0 str_const1
-	li	$t1 164
+	li	$t1 165
 	jal	_dispatch_abort
 label159:
 	lw	$t1 8($a0)
@@ -2204,7 +2171,7 @@ label138:
 	b	label134
 label133:
 	lw	$s1 20($s0)
-	la	$t2 str_const10
+	la	$t2 str_const9
 	move	$t1 $s1
 	la	$a0 bool_const1
 	beq	$t1 $t2 label162
@@ -2219,7 +2186,7 @@ label162:
 	move	$a0 $s0
 	bne	$a0 $zero label163
 	la	$a0 str_const1
-	li	$t1 169
+	li	$t1 170
 	jal	_dispatch_abort
 label163:
 	lw	$t1 8($a0)
@@ -2227,50 +2194,39 @@ label163:
 	jalr		$t1
 	b	label161
 label160:
-	la	$a0 str_const11
-	sw	$a0 0($sp)
-	addiu	$sp $sp -4
-	move	$a0 $s0
-	bne	$a0 $zero label164
-	la	$a0 str_const1
-	li	$t1 171
-	jal	_dispatch_abort
-label164:
-	lw	$t1 8($a0)
-	lw	$t1 12($t1)
-	jalr		$t1
 	lw	$a0 20($s0)
 	sw	$a0 0($sp)
 	addiu	$sp $sp -4
 	lw	$a0 16($s0)
-	bne	$a0 $zero label165
+	bne	$a0 $zero label164
 	la	$a0 str_const1
-	li	$t1 172
+	li	$t1 173
 	jal	_dispatch_abort
-label165:
+label164:
 	lw	$t1 8($a0)
 	lw	$t1 20($t1)
 	jalr		$t1
+	sw	$a0 16($s0)
 label161:
 label134:
-	la	$a0 str_const7
+	la	$a0 str_const6
 	sw	$a0 0($sp)
 	addiu	$sp $sp -4
 	move	$a0 $s0
-	bne	$a0 $zero label166
+	bne	$a0 $zero label165
 	la	$a0 str_const1
-	li	$t1 175
+	li	$t1 176
 	jal	_dispatch_abort
-label166:
+label165:
 	lw	$t1 8($a0)
 	lw	$t1 12($t1)
 	jalr		$t1
 	move	$a0 $s0
-	bne	$a0 $zero label167
+	bne	$a0 $zero label166
 	la	$a0 str_const1
-	li	$t1 176
+	li	$t1 177
 	jal	_dispatch_abort
-label167:
+label166:
 	lw	$t1 8($a0)
 	lw	$t1 20($t1)
 	jalr		$t1

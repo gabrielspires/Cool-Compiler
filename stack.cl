@@ -1,31 +1,41 @@
 (* Sua implementação deverá estar neste arquivo.  *)
 
 class Stack {
-	top () : String {
-		{ "%"; }
+	top () : String { (*Inicializa a pilha com uma flag*)
+		{
+			"%";
+		}
 	};
-	stack () : Stack {
-		{ self; }
+
+	stack () : Stack { (*Retorna o corpo da pilha*)
+		{
+			self;
+		}
 	};
-	push (new_item : String) : Stack {
-		(new Push).insert(new_item, self)
+
+	push (new_item : String) : Stack { (*Insere novo elemento em self*)
+		(new Push).insert(new_item, self) 
 	};
-	pop () : Stack{
-		(new Pop).remove(self.top(), self.stack())
+
+	pop () : Stack{ (*Remove elemento e retorna apenas o corpo da pilha (sem o topo)*)
+		(new Pop).remove(self.top(), self.stack()) 
 	};
 };
 
 class Push inherits Stack {
 	new_element : String;
 	stack_content : Stack;
-	top() : String {
+
+	top() : String { (*Receberá o novo valor para o topo da pilha*)
 		new_element
 	};
-	stack() : Stack {
+
+	stack() : Stack { (*Retorna o corpo da pilha*)
 		stack_content
 	};
+
 	insert(new_item : String, rest_of_stack : Stack) : Stack {
-		{
+		{ (*Altera o topo da pilha e atribui a pilha antiga ao corpo desta nova pilha*)
 			new_element <- new_item;
 			stack_content <- rest_of_stack;
 			self; (* return *)
@@ -36,12 +46,15 @@ class Push inherits Stack {
 class Pop inherits Stack {
 	new_top_element : String;
 	stack_content : Stack;
-	top() : String {
+
+	top() : String { (*Receberá o valor do topo do corpo da pilha*)
 		new_top_element
 	};
-	stack() : Stack {
+
+	stack() : Stack { (*Retorna o corpo da pilha*)
 		stack_content
 	};
+
 	remove(item_to_remove : String, rest_of_stack : Stack) : Stack {
 		{
 			new_top_element <- rest_of_stack.top();
@@ -50,51 +63,7 @@ class Pop inherits Stack {
 		}
 	};
 };
-(*
-class StackCommand {
-	command : String;
 
-	init (string : String) : StackCommand{
-		{
-			command <- string;
-			self;
-		}
-	};
-
-	value() : String {
-		command
-	};
-};
-
-class StackInt inherits StackCommand {
-	integer : Int;
-
-	init (n : Int) : StackCommand {
-		{
-			integer <- n;
-			self;
-		}
-	};
-
-	value() : Int {
-		integer
-	};
-};
-
-class StackSum inherits StackCommand {
-	
-};
-
-class StackSwap inherits StackCommand {
-
-};
-
-class StackEvaluate inherits StackCommand {
-
-};
-
-class Stack
-*)
 class Main inherits IO {
 	stop : Bool <- false;
 	program_stack : Stack;
@@ -107,13 +76,12 @@ class Main inherits IO {
 	y_to_int : Int;
 
 	displayStack(stack : Stack) : Object {
-		if (stack.top() = "@") then
-			out_string("Stack is empty!\n")
+		if (stack.top() = "%") then
+			out_string("")
 		else {
 			out_string(stack.top().concat("\n"));
 			displayStack(stack.stack());
-		}
-		fi
+		} fi
 	};
 
 	isOperation(item : String) : Bool {
@@ -130,7 +98,7 @@ class Main inherits IO {
 
 	main() : Object {
 		{
-			program_stack <- new Stack.push("%");
+			program_stack <- (new Stack).push("%");
 			out_string(">");
 			input_string <- in_string();
 			while (not stop) Loop {
@@ -139,9 +107,11 @@ class Main inherits IO {
 				else {
 					if (input_string = "e") then {
 						item <- program_stack.top();
+						(*out_string(item);*)
 						if  (isOperation(item)) then {
 							if (item = "s") then {
 								(*Swaps the last two items*)
+								(*out_string("deu S\n");*)
 								program_stack <- program_stack.pop();
 								x <- program_stack.top();
 								program_stack <- program_stack.pop();
@@ -168,8 +138,8 @@ class Main inherits IO {
 						if (input_string = "d") then {
 							displayStack(program_stack);
 						} else {
-							out_string("push");
-							program_stack.push(input_string);
+							(*out_string("push");*)
+							program_stack <- program_stack.push(input_string);
 						} fi;
 					} fi;
 					out_string(">");
@@ -178,5 +148,4 @@ class Main inherits IO {
 			} pool;
 		}
 	};
-
 };
