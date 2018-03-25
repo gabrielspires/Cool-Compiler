@@ -56,7 +56,7 @@ class Pop inherits Stack {
 	};
 
 	remove(item_to_remove : String, rest_of_stack : Stack) : Stack {
-		{
+		{ (*Altera o topo da pilha e atribui o corpo do corpo pilha antiga ao corpo desta nova pilha*)
 			new_top_element <- rest_of_stack.top();
 			stack_content <- rest_of_stack.stack();
 			self; (* return *)
@@ -84,7 +84,7 @@ class Main inherits IO {
 		} fi
 	};
 
-	isOperation(item : String) : Bool {
+	isOperation(item : String) : Bool { (**)
 		if (item = "s") then
 			true
 		else
