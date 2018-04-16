@@ -1,3 +1,5 @@
+(*GABRIEL HENRIQUE SOUTO PIRES - 2014106384*)
+
 (* Sua implementação deverá estar neste arquivo.  *)
 
 class Stack {
