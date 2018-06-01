@@ -40,13 +40,13 @@
     * (fictional) construct that matches a plus between two integer constants. 
     * (SUCH A RULE SHOULD NOT BE  PART OF YOUR PARSER):
     
-    plus_consts	: INT_CONST '+' INT_CONST 
+    plus_consts : INT_CONST '+' INT_CONST 
     
     * where INT_CONST is a terminal for an integer constant. Now, a correct
     * action for this rule that attaches the correct line number to plus_const
     * would look like the following:
     
-    plus_consts	: INT_CONST '+' INT_CONST 
+    plus_consts : INT_CONST '+' INT_CONST 
     {
       // Set the line number of the current non-terminal:
       // ***********************************************
@@ -80,7 +80,7 @@
     /************************************************************************/
     /*                DONT CHANGE ANYTHING IN THIS SECTION                  */
     
-    Program ast_root;	      /* the result of the parse  */
+    Program ast_root;       /* the result of the parse  */
     Classes parse_results;        /* for use in semantic analysis */
     int omerrs = 0;               /* number of errors in lexing and parsing */
     %}
@@ -135,39 +135,195 @@
     %type <class_> class
     
     /* You will want to change the following line. */
-    %type <features> dummy_feature_list
-    
+    %type <features> features_list
+    %type <features> features
+    %type <feature> feature
+    %type <formals> formals
+    %type <formal> formal
+    %type <cases> case_branch_list
+    %type <case_> case_branch
+    %type <expressions> one_or_more_expr
+    %type <expressions> param_expr
+    %type <expression> expr
+    %type <expression> let_expr
+
     /* Precedence declarations go here. */
-    
+    %right ASSIGN
+    %left NOT
+    %nonassoc LE '<' '='
+    %left '+' '-'
+    %left '*' '/'
+    %left ISVOID
+    %left '~'
+    %left '@'
+    %left '.'
     
     %%
     /* 
     Save the root of the abstract syntax tree in a global variable.
     */
-    program	: class_list	{ @$ = @1; ast_root = program($1); }
+    program
+    : class_list
+    { @$ = @1; ast_root = program($1); }
     ;
     
     class_list
-    : class			/* single class */
+    : class     /* single class */
     { $$ = single_Classes($1);
     parse_results = $$; }
-    | class_list class	/* several classes */
+    | class_list class  /* several classes */
     { $$ = append_Classes($1,single_Classes($2)); 
     parse_results = $$; }
     ;
     
     /* If no parent is specified, the class inherits from the Object class. */
-    class	: CLASS TYPEID '{' dummy_feature_list '}' ';'
+    class : CLASS TYPEID '{' features_list '}' ';'
     { $$ = class_($2,idtable.add_string("Object"),$4,
     stringtable.add_string(curr_filename)); }
-    | CLASS TYPEID INHERITS TYPEID '{' dummy_feature_list '}' ';'
+    | CLASS TYPEID INHERITS TYPEID '{' features_list '}' ';'
     { $$ = class_($2,$4,$6,stringtable.add_string(curr_filename)); }
+    | CLASS TYPEID '{' error '}' ';' 
+    { yyclearin; $$ = NULL; }
+    | CLASS error '{' features_list '}' ';' 
+    { yyclearin; $$ = NULL; }
+    | CLASS error '{' error '}' ';' 
+    { yyclearin; $$ = NULL; }
     ;
     
     /* Feature list may be empty, but no empty features in list. */
-    dummy_feature_list:		/* empty */
-    {  $$ = nil_Features(); }
+    features_list
+    : features
+    { $$ = $1; }
+    | { $$ = nil_Features(); }
+    ;
     
+    features
+    : feature ';'
+    { $$ = single_Features($1); }
+    | features feature ';'
+    { $$ = append_Features($1, single_Features($2)); }
+    | error ';'
+    { yyclearin; $$ = NULL; }
+    ;
+
+    feature
+    : OBJECTID '(' formals ')' ':' TYPEID '{' expr '}'
+    { $$ = method($1, $3, $6, $8); }
+    | OBJECTID ':' TYPEID
+    { $$ = attr($1, $3, no_expr()); }
+    | OBJECTID ':' TYPEID ASSIGN expr
+    { $$ = attr($1, $3, $5); }
+    ;
+
+    formals
+    : formal { $$ = single_Formals($1); }
+    | formals ',' formal
+    { $$ = append_Formals($1, single_Formals($3)); }
+    | { $$ = nil_Formals(); }
+    ;
+
+    formal
+    : OBJECTID ':' TYPEID
+    { $$ = formal($1, $3); }
+    ;
+
+    case_branch_list
+    : case_branch
+    { $$ = single_Cases($1); }
+    | case_branch_list case_branch
+    { $$ = append_Cases($1, single_Cases($2)); }
+    ;
+
+    case_branch
+    : OBJECTID ':' TYPEID DARROW expr ';'
+    { $$ = branch($1, $3, $5); }
+    ;
+
+    one_or_more_expr
+    : expr ';'
+    { $$ = single_Expressions($1); }
+    | one_or_more_expr expr ';'
+    { $$ = append_Expressions($1, single_Expressions($2)); }
+    | error ';'
+    { yyclearin; $$ = NULL; }
+    ;
+
+    param_expr
+    : expr
+    { $$ = single_Expressions($1); }
+    | param_expr ',' expr
+    { $$ = append_Expressions($1, single_Expressions($3)); }
+    | { $$ = nil_Expressions(); }
+    ;
+
+    expr
+    : OBJECTID ASSIGN expr
+    { $$ = assign($1, $3); }
+    
+    | expr '.' OBJECTID '(' param_expr ')'
+    { $$ = dispatch($1, $3, $5); }
+    | expr '@' TYPEID '.' OBJECTID '(' param_expr ')'
+    { $$ = static_dispatch($1, $3, $5, $7); }
+    | OBJECTID '(' param_expr ')'
+    { $$ = dispatch(object(idtable.add_string("self")), $1, $3); }
+    | IF expr THEN expr ELSE expr FI
+    { $$ = cond($2, $4, $6); }
+    | WHILE expr LOOP expr POOL
+    { $$ = loop($2, $4); }
+    | '{' one_or_more_expr '}'
+    { $$ = block($2); }
+    | LET let_expr
+    { $$ = $2; }
+    | CASE expr OF case_branch_list ESAC
+    { $$ = typcase($2, $4); }
+    | NEW TYPEID
+    { $$ = new_($2); }
+    | ISVOID expr
+    { $$ = isvoid($2); }
+    | expr '+' expr
+    { $$ = plus($1, $3); }
+    | expr '-' expr
+    { $$ = sub($1, $3); }
+    | expr '*' expr
+    { $$ = mul($1, $3); }
+    | expr '/' expr
+    { $$ = divide($1, $3); }
+    | '~' expr
+    { $$ = neg($2); }
+    | expr '<' expr
+    { $$ = lt($1, $3); }
+    | expr LE expr
+    { $$ = leq($1, $3); }
+    | expr '=' expr
+    { $$ = eq($1, $3); }
+    | NOT expr
+    { $$ = comp($2); }
+    | '(' expr ')'
+    { $$ = $2; }
+    | OBJECTID
+    { $$ = object($1); }
+    | INT_CONST
+    { $$ = int_const($1); }
+    | STR_CONST
+    { $$ = string_const($1); }
+    | BOOL_CONST
+    { $$ = bool_const($1); }
+    ;
+
+    let_expr
+    : OBJECTID ':' TYPEID IN expr
+    { $$ = let($1, $3, no_expr(), $5); }
+    | OBJECTID ':' TYPEID ASSIGN expr IN expr
+    { $$ = let($1, $3, $5, $7); }
+    | OBJECTID ':' TYPEID ',' let_expr
+    { $$ = let($1, $3, no_expr(), $5); }
+    | OBJECTID ':' TYPEID ASSIGN expr ',' let_expr
+    { $$ = let($1, $3, $5, $7); }
+    | error IN expr
+    { yyclearin; $$ = NULL; }
+    | error ',' let_expr
+    { yyclearin; $$ = NULL; }
+    ;
     
     /* end of grammar */
     %%
