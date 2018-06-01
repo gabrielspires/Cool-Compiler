@@ -182,6 +182,12 @@
     stringtable.add_string(curr_filename)); }
     | CLASS TYPEID INHERITS TYPEID '{' features_list '}' ';'
     { $$ = class_($2,$4,$6,stringtable.add_string(curr_filename)); }
+    | CLASS TYPEID '{' error '}' ';' 
+    { yyclearin; $$ = NULL; }
+    | CLASS error '{' features_list '}' ';' 
+    { yyclearin; $$ = NULL; }
+    | CLASS error '{' error '}' ';' 
+    { yyclearin; $$ = NULL; }
     ;
     
     /* Feature list may be empty, but no empty features in list. */
@@ -260,26 +266,20 @@
     { $$ = static_dispatch($1, $3, $5, $7); }
     | OBJECTID '(' param_expr ')'
     { $$ = dispatch(object(idtable.add_string("self")), $1, $3); }
-
     | IF expr THEN expr ELSE expr FI
     { $$ = cond($2, $4, $6); }
     | WHILE expr LOOP expr POOL
     { $$ = loop($2, $4); }
-
     | '{' one_or_more_expr '}'
     { $$ = block($2); }
-
     | LET let_expr
     { $$ = $2; }
-
     | CASE expr OF case_branch_list ESAC
     { $$ = typcase($2, $4); }
-
     | NEW TYPEID
     { $$ = new_($2); }
     | ISVOID expr
     { $$ = isvoid($2); }
-
     | expr '+' expr
     { $$ = plus($1, $3); }
     | expr '-' expr
@@ -298,13 +298,10 @@
     { $$ = eq($1, $3); }
     | NOT expr
     { $$ = comp($2); }
-    
     | '(' expr ')'
     { $$ = $2; }
-
     | OBJECTID
     { $$ = object($1); }
-
     | INT_CONST
     { $$ = int_const($1); }
     | STR_CONST
