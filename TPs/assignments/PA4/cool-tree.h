@@ -8,13 +8,13 @@
 //
 //////////////////////////////////////////////////////////
 
-#include <list>
-#include <map>
-#include <symtab.h>
 
 #include "tree.h"
 #include "cool-tree.handcode.h"
 
+#include <list>
+#include <map>
+#include <symtab.h>
 
 // define the class for phylum
 // define simple phylum - Program
